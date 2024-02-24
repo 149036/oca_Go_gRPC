@@ -1,0 +1,19 @@
+syntax = "proto3";
+package order;
+
+option go_package = "github.com/149036/oca_Go_gRPC/api/order";
+
+service OrderTo{
+    rpc GetOrder(GetOrderRequest) returns (GetOrderResponse) {}
+}
+
+message GetOrderRequest{
+    int32 id = 1;
+}
+message GetOrderResponse{
+    Order order= 1;
+}
+message Order{
+    int32 id = 1;
+    string content = 2;
+}
